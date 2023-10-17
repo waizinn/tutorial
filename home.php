@@ -18,7 +18,7 @@ if(empty($_SESSION['login'])){
 </head>
 <body>
 <div class="container">
-    <h2 class="mt-4">Welcome <?php echo $_SESSION['uname']; ?> <a href="logout.php">Logout</a></h2>
+    <h2 class="mt-4">Hello, welcome <?php echo $_SESSION['uname']; ?> <a href="logout.php">Logout</a></h2>
 <?php
 require_once('connect.php');
 $sql="SELECT * FROM user WHERE 1 ORDER BY username";
