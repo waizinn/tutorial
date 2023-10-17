@@ -13,6 +13,15 @@ if($err==''){
     require_once('connect.php');
     $sql="SELECT * FROM user WHERE username='$uname' AND password='$ps'";
    $row= $conn->query($sql)->fetch(PDO::FETCH_ASSOC);
+//    header('Content-Type: text/json');
+//    echo json_encode($row);
+//    exit;
+// $sql="SELECT * FROM user WHERE username= :a AND password= :b ";
+// $check =$conn->prepare($sql,[PDO::ATTR_CURSOR=>PDO::CURSOR_FWDONLY]);
+// $check->bindParam(':a', $uname);
+// $check->bindParam(':b', $ps);
+// $check->execute();
+// $row=$check->fetch(PDO::FETCH_ASSOC);
 if($row['id']>0){
     $_SESSION['login']=true;
     $_SESSION['id']=$row['id'];
